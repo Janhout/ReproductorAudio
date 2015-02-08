@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reproductor Audio</string>
+    <string name="title_activity_grabador">Grabador</string>
+    <string name="grabar_audio">Grabar Audio</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="add">Add</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="tiempo">00:00:00</string>
+    <string name="formato_fecha">yyyy_MM_dd_hh_mm_ss</string>
+    <string name="nombre_fichero">grabacion_</string>
+    <string name="buscar_audio">audio/*</string>
+    <string name="cancion">cancion</string>
+    <string name="sin_datos">Datos desconocidos</string>
+    <string name="valor">valor</string>
+    <string name="formato">.m4a</string>
+
+
+</resources>
