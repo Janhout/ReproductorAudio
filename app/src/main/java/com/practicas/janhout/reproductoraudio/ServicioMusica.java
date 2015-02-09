@@ -11,6 +11,7 @@ import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.os.PowerManager;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -48,6 +49,7 @@ public class ServicioMusica extends Service implements MediaPlayer.OnPreparedLis
     public static final String NEXT = "next";
     public static final String ACTIIVIDAD_PRINCIPAL = "act_principal";
     public static final String CAMBIO = "cambiar";
+    public static final String TERMINAR = "terminar";
 
     public static final int SERVICIO_FOREGROUND = 5;
 
@@ -111,6 +113,8 @@ public class ServicioMusica extends Service implements MediaPlayer.OnPreparedLis
             } else if (action.equals(CAMBIO)){
                 int numero = intent.getIntExtra(getString(R.string.valor), 0);
                 cambiar(numero);
+            } else if(action.equals(TERMINAR)){
+                terminar();
             }
         }
         return super.onStartCommand(intent, flags, startId);
@@ -240,6 +244,12 @@ public class ServicioMusica extends Service implements MediaPlayer.OnPreparedLis
             estado = Estados.stopped;
         }
         reproducir = false;
+    }
+
+    private void terminar(){
+        if (estado == Estados.error || estado == Estados.stopped){
+            this.stopSelf();
+        }
     }
 
     /***********************************************************************/

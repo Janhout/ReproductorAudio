@@ -102,6 +102,14 @@ public class Principal extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Intent intent = new Intent(this, ServicioMusica.class);
+        intent.setAction(ServicioMusica.TERMINAR);
+        startService(intent);
+    }
+
     /***********************************************************************/
     /*AUXILIARES*/
     /***********************************************************************/
